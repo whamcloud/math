@@ -1,6 +1,6 @@
 /* @flow */
 
-import {curry} from 'intel-fp';
+import {curry} from './fp';
 
 export const lte = curry(2, (a: number, b: number) => a <= b);
 

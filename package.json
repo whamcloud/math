@@ -1,6 +1,6 @@
 {
   "name": "intel-math",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Functional Math",
   "main": "math.js",
   "scripts": {
@@ -24,11 +24,11 @@
   "author": "IML Team",
   "license": "MIT",
   "dependencies": {
-    "intel-fp": "2.0.1"
+    "intel-fp": "3.0.0"
   },
   "devDependencies": {
     "babel-core": "6.2.1",
-    "babel-eslint": "4.1.5",
+    "babel-eslint": "4.1.6",
     "babel-plugin-syntax-flow": "6.1.18",
     "babel-plugin-transform-es2015-modules-umd": "6.1.18",
     "babel-plugin-transform-flow-strip-types": "6.1.18",

@@ -25,9 +25,10 @@ require('babel-register')({
     var p = filename.slice(path.dirname(__dirname).length + 1);
 
     var keep = [
-      'node_modules/intel-fp/index.js',
+      'node_modules/intel-fp/fp.js',
       'test/',
-      'math.js'
+      'math.js',
+      'fp.js'
     ];
 
     var foundMatch = keep.some(function  (s) {
