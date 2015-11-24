@@ -5,7 +5,7 @@ var fs = require('fs');
 var mkdirp = require('mkdirp');
 var babel = require('babel-core');
 
-var index = require.resolve('../index');
+var index = require.resolve('../');
 var opts = {
   plugins: [
     'transform-es2015-modules-umd'

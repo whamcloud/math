@@ -27,7 +27,7 @@ require('babel-register')({
     var keep = [
       'node_modules/intel-fp/index.js',
       'test/',
-      'index.js'
+      'math.js'
     ];
 
     var foundMatch = keep.some(function  (s) {

@@ -1,4 +1,4 @@
-import * as math from '../index';
+import * as math from '../math';
 import {__} from 'intel-fp';
 
 describe('math', () => {
