@@ -1,5 +1,5 @@
 {
-  "name": "math",
+  "name": "intel-math",
   "version": "1.0.0",
   "description": "Functional Math",
   "main": "index.js",
@@ -14,7 +14,7 @@
   },
   "pre-commit": [
     "jscs",
-    "jshint",
+    "eslint",
     "test"
   ],
   "repository": {
