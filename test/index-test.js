@@ -12,7 +12,7 @@ describe('math', () => {
     });
 
     it('should tell if a number is less than another', () => {
-      expect(math.lte(3, 4)).toBe(true);
+      expect(math.lte(4, 3)).toBe(true);
     });
 
     it('should tell if a number is equal to another', () => {
@@ -20,7 +20,7 @@ describe('math', () => {
     });
 
     it('should tell if a number is greater than another', () => {
-      expect(math.lte(4, 3)).toBe(false);
+      expect(math.lte(3, 4)).toBe(false);
     });
   });
 
@@ -34,7 +34,7 @@ describe('math', () => {
     });
 
     it('should tell if a number is less than another', () => {
-      expect(math.lt(3, 4)).toBe(true);
+      expect(math.lt(4, 3)).toBe(true);
     });
 
     it('should not tell if a number is equal to another', () => {
@@ -42,7 +42,7 @@ describe('math', () => {
     });
 
     it('should tell if a number is greater than another', () => {
-      expect(math.lt(4, 3)).toBe(false);
+      expect(math.lt(3, 4)).toBe(false);
     });
   });
 
@@ -56,7 +56,7 @@ describe('math', () => {
     });
 
     it('should tell if a number is greater than another', () => {
-      expect(math.gte(4, 3)).toBe(true);
+      expect(math.gte(3, 4)).toBe(true);
     });
 
     it('should tell if a number is equal to another', () => {
@@ -64,7 +64,7 @@ describe('math', () => {
     });
 
     it('should tell if a number is less than another', () => {
-      expect(math.gte(3, 4)).toBe(false);
+      expect(math.gte(4, 3)).toBe(false);
     });
   });
 
@@ -78,7 +78,7 @@ describe('math', () => {
     });
 
     it('should tell if a number is greater than another', () => {
-      expect(math.gt(4, 3)).toBe(true);
+      expect(math.gt(3, 4)).toBe(true);
     });
 
     it('should not tell if a number is equal to another', () => {
@@ -86,7 +86,7 @@ describe('math', () => {
     });
 
     it('should tell if a number is less than another', () => {
-      expect(math.gt(3, 4)).toBe(false);
+      expect(math.gt(4, 3)).toBe(false);
     });
   });
 
