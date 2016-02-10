@@ -19,10 +19,8 @@ if (process.env.RUNNER === 'CI') {
   jasmine.jasmine.getEnv().addReporter(junitReporter);
 }
 
-require('babel-register');
-
 jasmine.loadConfig({
-  spec_dir: 'test',
+  spec_dir: 'dist/test',
   spec_files: [
     '**/*.js'
   ],

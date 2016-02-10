@@ -13,6 +13,7 @@ do
     nvm use $node_version
     rm -rf node_modules
     npm i
+    npm run prepublish
     npm t
     mv math-results*.xml ../results
 done
