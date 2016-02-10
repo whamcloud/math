@@ -4,12 +4,11 @@
 
 var Jasmine = require('jasmine');
 var jasmine = new Jasmine();
-var path = require('path');
 
 if (process.env.RUNNER === 'CI') {
-  var krustyJasmineReporter = require('krusty-jasmine-reporter');
+  var jasmineJUnitReporter = require('intel-jasmine-junit-reporter');
 
-  var junitReporter = new krustyJasmineReporter.KrustyJasmineJUnitReporter({
+  var junitReporter = jasmineJUnitReporter({
     specTimer: new jasmine.jasmine.Timer(),
     JUnitReportSavePath: process.env.SAVE_PATH || './',
     JUnitReportFilePrefix: process.env.FILE_PREFIX || 'math-results-' +  process.version,
@@ -20,30 +19,14 @@ if (process.env.RUNNER === 'CI') {
   jasmine.jasmine.getEnv().addReporter(junitReporter);
 }
 
-require('babel-register')({
-  ignore: function ignore (filename) {
-    var p = filename.slice(path.dirname(__dirname).length + 1);
-
-    var keep = [
-      'node_modules/intel-fp/fp.js',
-      'test/',
-      'math.js',
-      'fp.js'
-    ];
-
-    var foundMatch = keep.some(function  (s) {
-      return p.search(s) === 0;
-    });
-
-    return !foundMatch;
-  }
-});
+require('babel-register');
 
 jasmine.loadConfig({
   spec_dir: 'test',
   spec_files: [
     '**/*.js'
-  ]
+  ],
+  random: true
 });
 
 jasmine.execute();
