@@ -1,8 +1,8 @@
 {
   "name": "intel-math",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Functional Math",
-  "main": "math.js",
+  "main": "dist/math.js",
   "scripts": {
     "test:dev": "npm run prepublish && npm t",
     "test": "NODE_ENV=test ./bin/test.js",
@@ -25,19 +25,19 @@
   "author": "IML Team",
   "license": "MIT",
   "dependencies": {
-    "intel-fp": "4.1.1"
+    "intel-fp": "4.1.2"
   },
   "devDependencies": {
-    "babel-cli": "6.5.1",
-    "babel-core": "6.5.1",
-    "babel-eslint": "5.0.0-beta10",
-    "babel-plugin-transform-flow-strip-types": "6.5.0",
-    "babel-plugin-transform-strict-mode": "6.5.0",
-    "babel-preset-es2015": "6.5.0",
-    "eslint": "1.10.3",
-    "eslint-plugin-flow-vars": "0.1.3",
+    "babel-cli": "6.6.5",
+    "babel-core": "6.7.2",
+    "babel-eslint": "5.0.0",
+    "babel-plugin-transform-flow-strip-types": "6.7.0",
+    "babel-plugin-transform-strict-mode": "6.6.5",
+    "babel-preset-es2015": "6.6.0",
+    "eslint": "2.2.0",
+    "eslint-plugin-flow-vars": "0.2.1",
     "jasmine": "2.4.1",
-    "jscs": "2.9.0",
+    "jscs": "2.11.0",
     "intel-jasmine-junit-reporter": "1.0.0",
     "pre-commit": "1.1.2"
   }
