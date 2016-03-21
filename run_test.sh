@@ -15,5 +15,5 @@ do
     npm i
     npm run cover -- --reporter=cobertura
     mv ./coverage/cobertura-coverage.xml ../coverage
-    mv math-results*.xml ../results
+    mv *results*.xml ../results
 done
