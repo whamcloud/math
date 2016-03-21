@@ -1,6 +1,6 @@
 {
   "name": "intel-math",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Functional Math",
   "main": "dist/math.js",
   "scripts": {
@@ -8,7 +8,17 @@
     "test": "NODE_ENV=test ./bin/test.js",
     "eslint": "eslint ./",
     "jscs": "jscs .",
-    "prepublish": "rm -rf ./dist && babel -d ./dist math.js ./test/math-test.js && cp math.js ./dist/math.js.flow"
+    "prepublish": "./bin/build.sh",
+    "cover:dev": "npm run cover -- --reporter=html",
+    "cover": "NODE_ENV=test ./bin/build.sh cover && nyc --reporter=text npm t"
+  },
+  "nyc": {
+    "include": [
+      "/"
+    ],
+    "exclude": [
+      "test"
+    ]
   },
   "publishConfig": {
     "registry": "https://ubit-artifactory-or.intel.com/artifactory/api/npm/iml-npm-local"
