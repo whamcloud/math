@@ -1,6 +1,6 @@
 {
   "name": "intel-math",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "Functional Math",
   "main": "dist/math.js",
   "scripts": {
