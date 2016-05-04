@@ -1,5 +1,6 @@
 import * as math from '../source/math';
 import {__} from 'intel-fp';
+import {jasmine, describe, it, expect} from './jasmine.js';
 
 describe('math', () => {
   describe('lte', () => {
