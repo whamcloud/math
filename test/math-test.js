@@ -146,4 +146,26 @@ describe('math', () => {
       expect(math.div(3, 3)).toBe(1);
     });
   });
+
+  describe('averageBy', () => {
+    it('should exist on math', () => {
+      expect(math.averageBy)
+        .toEqual(jasmine.any(Function));
+    });
+
+    it('should be curried', () => {
+      expect(math.averageBy(__, __))
+        .toEqual(jasmine.any(Function));
+    });
+
+    it('should perform the operation', () => {
+      expect(math.averageBy(x => x, [1, 2, 3, 4, 5]))
+        .toBe(3);
+    });
+
+    it('should average an empty list', () => {
+      expect(math.averageBy(x => x, []))
+        .toBe(0);
+    });
+  });
 });
