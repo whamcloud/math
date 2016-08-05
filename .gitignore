@@ -1,6 +1,5 @@
 node_modules
-*.iml
-.idea
-coverage
+*.log
 dist
 .nyc_output
+coverage
