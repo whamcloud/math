@@ -195,7 +195,51 @@ describe('math', () => {
     });
 
     it('should sum an empty list', () => {
-      expect(math.averageBy(x => x, []))
+      expect(math.sumBy(x => x, []))
+        .toBe(0);
+    });
+  });
+
+  describe('minBy', () => {
+    it('should exist on math', () => {
+      expect(math.minBy)
+        .toEqual(jasmine.any(Function));
+    });
+
+    it('should be curried', () => {
+      expect(math.minBy(__, __))
+        .toEqual(jasmine.any(Function));
+    });
+
+    it('should perform the operation', () => {
+      expect(math.minBy(x => x, [1, 2, 3, 4, 5]))
+        .toBe(1);
+    });
+
+    it('should return 0 for an empty list', () => {
+      expect(math.minBy(x => x, []))
+        .toBe(0);
+    });
+  });
+
+  describe('maxBy', () => {
+    it('should exist on math', () => {
+      expect(math.maxBy)
+        .toEqual(jasmine.any(Function));
+    });
+
+    it('should be curried', () => {
+      expect(math.maxBy(__, __))
+        .toEqual(jasmine.any(Function));
+    });
+
+    it('should perform the operation', () => {
+      expect(math.maxBy(x => x, [1, 2, 3, 4, 5]))
+        .toBe(5);
+    });
+
+    it('should return 0 for an empty list', () => {
+      expect(math.maxBy(x => x, []))
         .toBe(0);
     });
   });

@@ -39,15 +39,30 @@ export const minus = fp.curry2((a:number, b:number) => a - b);
 
 export const div = fp.curry2((a:number, b:number) => a / b);
 
-type numberToNumberT = (x:number) => number;
+type anyToNumberT = (x:any) => number;
 
-export const sumBy = fp.curry2((fn:numberToNumberT, xs:number[]) =>
+export const minBy = fp.curry2((fn:anyToNumberT, xs:number[]) => {
+  if (xs.length === 0)
+    return 0;
+
+  return xs
+    .map(fn)
+    .reduce((a, b) => lte(a, b) ? b : a);
+});
+
+export const maxBy = fp.curry2((fn:anyToNumberT, xs:number[]) =>
+  xs
+    .map(fn)
+    .reduce((a, b) => gte(a, b) ? b : a, 0)
+);
+
+export const sumBy = fp.curry2((fn:anyToNumberT, xs:number[]) =>
   xs
     .map(fn)
     .reduce((a, b) => a + b, 0)
 );
 
-export const averageBy = fp.curry2((fn:(x:number) => number, xs:number[]) => {
+export const averageBy = fp.curry2((fn:anyToNumberT, xs:number[]) => {
   if (xs.length === 0)
     return 0;
 
