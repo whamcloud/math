@@ -23,29 +23,33 @@
 
 import * as fp from 'intel-fp';
 
-export const lte = fp.curry(2, (b:number, a:number) => a <= b);
+export const lte = fp.curry2((b:number, a:number) => a <= b);
 
-export const lt = fp.curry(2, (b:number, a:number) => a < b);
+export const lt = fp.curry2((b:number, a:number) => a < b);
 
-export const gte = fp.curry(2, (b:number, a:number) => a >= b);
+export const gte = fp.curry2((b:number, a:number) => a >= b);
 
-export const gt = fp.curry(2, (b:number, a:number) => a > b);
+export const gt = fp.curry2((b:number, a:number) => a > b);
 
-export const times = fp.curry(2, (a:number, b:number) => a * b);
+export const times = fp.curry2((a:number, b:number) => a * b);
 
-export const add = fp.curry(2, (a:number, b:number) => a + b);
+export const add = fp.curry2((a:number, b:number) => a + b);
 
-export const minus = fp.curry(2, (a:number, b:number) => a - b);
+export const minus = fp.curry2((a:number, b:number) => a - b);
 
-export const div = fp.curry(2, (a:number, b:number) => a / b);
+export const div = fp.curry2((a:number, b:number) => a / b);
 
-export const averageBy = fp.curry(2, (fn:(x:number) => number, xs:number[]) => {
+type numberToNumberT = (x:number) => number;
+
+export const sumBy = fp.curry2((fn:numberToNumberT, xs:number[]) =>
+  xs
+    .map(fn)
+    .reduce((a, b) => a + b, 0)
+);
+
+export const averageBy = fp.curry2((fn:(x:number) => number, xs:number[]) => {
   if (xs.length === 0)
     return 0;
 
-  const sum = xs
-    .map(fn)
-    .reduce((a, b) => a + b, 0);
-
-  return sum / xs.length;
+  return sumBy(fn, xs) / xs.length;
 });

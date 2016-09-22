@@ -1,6 +1,15 @@
 import * as math from '../source/math';
-import {__} from 'intel-fp';
-import {jasmine, describe, it, expect} from './jasmine.js';
+
+import {
+  __
+} from 'intel-fp';
+
+import {
+  jasmine,
+  describe,
+  it,
+  expect
+} from './jasmine.js';
 
 describe('math', () => {
   describe('lte', () => {
@@ -164,6 +173,28 @@ describe('math', () => {
     });
 
     it('should average an empty list', () => {
+      expect(math.averageBy(x => x, []))
+        .toBe(0);
+    });
+  });
+
+  describe('sumBy', () => {
+    it('should exist on math', () => {
+      expect(math.sumBy)
+        .toEqual(jasmine.any(Function));
+    });
+
+    it('should be curried', () => {
+      expect(math.sumBy(__, __))
+        .toEqual(jasmine.any(Function));
+    });
+
+    it('should perform the operation', () => {
+      expect(math.sumBy(x => x, [1, 2, 3, 4, 5]))
+        .toBe(15);
+    });
+
+    it('should sum an empty list', () => {
       expect(math.averageBy(x => x, []))
         .toBe(0);
     });
