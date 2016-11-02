@@ -1,10 +1,6 @@
 import * as math from '../source/math';
 
 import {
-  __
-} from 'intel-fp';
-
-import {
   jasmine,
   describe,
   it,
@@ -15,10 +11,6 @@ describe('math', () => {
   describe('lte', () => {
     it('should exist on math', () => {
       expect(math.lte).toEqual(jasmine.any(Function));
-    });
-
-    it('should be curried', () => {
-      expect(math.lte(__, __)).toEqual(jasmine.any(Function));
     });
 
     it('should tell if a number is less than another', () => {
@@ -39,10 +31,6 @@ describe('math', () => {
       expect(math.lt).toEqual(jasmine.any(Function));
     });
 
-    it('should be curried', () => {
-      expect(math.lt(__, __)).toEqual(jasmine.any(Function));
-    });
-
     it('should tell if a number is less than another', () => {
       expect(math.lt(4, 3)).toBe(true);
     });
@@ -59,10 +47,6 @@ describe('math', () => {
   describe('gte', () => {
     it('should exist on math', () => {
       expect(math.gte).toEqual(jasmine.any(Function));
-    });
-
-    it('should be curried', () => {
-      expect(math.gte(__, __)).toEqual(jasmine.any(Function));
     });
 
     it('should tell if a number is greater than another', () => {
@@ -83,10 +67,6 @@ describe('math', () => {
       expect(math.gt).toEqual(jasmine.any(Function));
     });
 
-    it('should be curried', () => {
-      expect(math.gt(__, __)).toEqual(jasmine.any(Function));
-    });
-
     it('should tell if a number is greater than another', () => {
       expect(math.gt(3, 4)).toBe(true);
     });
@@ -105,10 +85,6 @@ describe('math', () => {
       expect(math.times).toEqual(jasmine.any(Function));
     });
 
-    it('should be curried', () => {
-      expect(math.times(__, __)).toEqual(jasmine.any(Function));
-    });
-
     it('should perform the operation', function () {
       expect(math.times(3, 3)).toBe(9);
     });
@@ -117,10 +93,6 @@ describe('math', () => {
   describe('add', () => {
     it('should exist on math', () => {
       expect(math.add).toEqual(jasmine.any(Function));
-    });
-
-    it('should be curried', () => {
-      expect(math.add(__, __)).toEqual(jasmine.any(Function));
     });
 
     it('should perform the operation', function () {
@@ -133,10 +105,6 @@ describe('math', () => {
       expect(math.minus).toEqual(jasmine.any(Function));
     });
 
-    it('should be curried', () => {
-      expect(math.minus(__, __)).toEqual(jasmine.any(Function));
-    });
-
     it('should perform the operation', function () {
       expect(math.minus(3, 3)).toBe(0);
     });
@@ -147,10 +115,6 @@ describe('math', () => {
       expect(math.div).toEqual(jasmine.any(Function));
     });
 
-    it('should be curried', () => {
-      expect(math.div(__, __)).toEqual(jasmine.any(Function));
-    });
-
     it('should perform the operation', function () {
       expect(math.div(3, 3)).toBe(1);
     });
@@ -159,11 +123,6 @@ describe('math', () => {
   describe('averageBy', () => {
     it('should exist on math', () => {
       expect(math.averageBy)
-        .toEqual(jasmine.any(Function));
-    });
-
-    it('should be curried', () => {
-      expect(math.averageBy(__, __))
         .toEqual(jasmine.any(Function));
     });
 
@@ -184,11 +143,6 @@ describe('math', () => {
         .toEqual(jasmine.any(Function));
     });
 
-    it('should be curried', () => {
-      expect(math.sumBy(__, __))
-        .toEqual(jasmine.any(Function));
-    });
-
     it('should perform the operation', () => {
       expect(math.sumBy(x => x, [1, 2, 3, 4, 5]))
         .toBe(15);
@@ -206,11 +160,6 @@ describe('math', () => {
         .toEqual(jasmine.any(Function));
     });
 
-    it('should be curried', () => {
-      expect(math.minBy(__, __))
-        .toEqual(jasmine.any(Function));
-    });
-
     it('should perform the operation', () => {
       expect(math.minBy(x => x, [1, 2, 3, 4, 5]))
         .toBe(1);
@@ -225,11 +174,6 @@ describe('math', () => {
   describe('maxBy', () => {
     it('should exist on math', () => {
       expect(math.maxBy)
-        .toEqual(jasmine.any(Function));
-    });
-
-    it('should be curried', () => {
-      expect(math.maxBy(__, __))
         .toEqual(jasmine.any(Function));
     });
 
