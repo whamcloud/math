@@ -3,7 +3,7 @@
 //
 // INTEL CONFIDENTIAL
 //
-// Copyright 2013-2016 Intel Corporation All Rights Reserved.
+// Copyright 2013-2017 Intel Corporation All Rights Reserved.
 //
 // The source code contained or described herein and all documents related
 // to the source code ("Material") are owned by Intel Corporation or its
@@ -21,50 +21,38 @@
 // otherwise. Any license under such intellectual property rights must be
 // express and approved by Intel in writing.
 
-import * as fp from 'intel-fp';
+export const lte = (b: number, a: number) => a <= b;
 
-export const lte = fp.curry2((b:number, a:number) => a <= b);
+export const lt = (b: number, a: number) => a < b;
 
-export const lt = fp.curry2((b:number, a:number) => a < b);
+export const gte = (b: number, a: number) => a >= b;
 
-export const gte = fp.curry2((b:number, a:number) => a >= b);
+export const gt = (b: number, a: number) => a > b;
 
-export const gt = fp.curry2((b:number, a:number) => a > b);
+export const times = (a: number, b: number) => a * b;
 
-export const times = fp.curry2((a:number, b:number) => a * b);
+export const add = (a: number, b: number) => a + b;
 
-export const add = fp.curry2((a:number, b:number) => a + b);
+export const minus = (a: number, b: number) => a - b;
 
-export const minus = fp.curry2((a:number, b:number) => a - b);
+export const div = (a: number, b: number) => a / b;
 
-export const div = fp.curry2((a:number, b:number) => a / b);
+type anyToNumberT = (x: any) => number;
 
-type anyToNumberT = (x:any) => number;
+export const minBy = (fn: anyToNumberT, xs: number[]) => {
+  if (xs.length === 0) return 0;
 
-export const minBy = fp.curry2((fn:anyToNumberT, xs:number[]) => {
-  if (xs.length === 0)
-    return 0;
+  return xs.map(fn).reduce((a, b) => lte(a, b) ? b : a);
+};
 
-  return xs
-    .map(fn)
-    .reduce((a, b) => lte(a, b) ? b : a);
-});
+export const maxBy = (fn: anyToNumberT, xs: number[]) =>
+  xs.map(fn).reduce((a, b) => gte(a, b) ? b : a, 0);
 
-export const maxBy = fp.curry2((fn:anyToNumberT, xs:number[]) =>
-  xs
-    .map(fn)
-    .reduce((a, b) => gte(a, b) ? b : a, 0)
-);
+export const sumBy = (fn: anyToNumberT, xs: number[]) =>
+  xs.map(fn).reduce((a, b) => a + b, 0);
 
-export const sumBy = fp.curry2((fn:anyToNumberT, xs:number[]) =>
-  xs
-    .map(fn)
-    .reduce((a, b) => a + b, 0)
-);
-
-export const averageBy = fp.curry2((fn:anyToNumberT, xs:number[]) => {
-  if (xs.length === 0)
-    return 0;
+export const averageBy = (fn: anyToNumberT, xs: number[]) => {
+  if (xs.length === 0) return 0;
 
   return sumBy(fn, xs) / xs.length;
-});
+};
