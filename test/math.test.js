@@ -1,11 +1,6 @@
 import * as math from '../source/math';
 
-import {
-  jasmine,
-  describe,
-  it,
-  expect
-} from './jasmine.js';
+import { jasmine, describe, it, expect } from './jasmine.js';
 
 describe('math', () => {
   describe('lte', () => {
@@ -85,7 +80,7 @@ describe('math', () => {
       expect(math.times).toEqual(jasmine.any(Function));
     });
 
-    it('should perform the operation', function () {
+    it('should perform the operation', function() {
       expect(math.times(3, 3)).toBe(9);
     });
   });
@@ -95,7 +90,7 @@ describe('math', () => {
       expect(math.add).toEqual(jasmine.any(Function));
     });
 
-    it('should perform the operation', function () {
+    it('should perform the operation', function() {
       expect(math.add(3, 3)).toBe(6);
     });
   });
@@ -105,7 +100,7 @@ describe('math', () => {
       expect(math.minus).toEqual(jasmine.any(Function));
     });
 
-    it('should perform the operation', function () {
+    it('should perform the operation', function() {
       expect(math.minus(3, 3)).toBe(0);
     });
   });
@@ -115,76 +110,64 @@ describe('math', () => {
       expect(math.div).toEqual(jasmine.any(Function));
     });
 
-    it('should perform the operation', function () {
+    it('should perform the operation', function() {
       expect(math.div(3, 3)).toBe(1);
     });
   });
 
   describe('averageBy', () => {
     it('should exist on math', () => {
-      expect(math.averageBy)
-        .toEqual(jasmine.any(Function));
+      expect(math.averageBy).toEqual(jasmine.any(Function));
     });
 
     it('should perform the operation', () => {
-      expect(math.averageBy(x => x, [1, 2, 3, 4, 5]))
-        .toBe(3);
+      expect(math.averageBy(x => x, [1, 2, 3, 4, 5])).toBe(3);
     });
 
     it('should average an empty list', () => {
-      expect(math.averageBy(x => x, []))
-        .toBe(0);
+      expect(math.averageBy(x => x, [])).toBe(0);
     });
   });
 
   describe('sumBy', () => {
     it('should exist on math', () => {
-      expect(math.sumBy)
-        .toEqual(jasmine.any(Function));
+      expect(math.sumBy).toEqual(jasmine.any(Function));
     });
 
     it('should perform the operation', () => {
-      expect(math.sumBy(x => x, [1, 2, 3, 4, 5]))
-        .toBe(15);
+      expect(math.sumBy(x => x, [1, 2, 3, 4, 5])).toBe(15);
     });
 
     it('should sum an empty list', () => {
-      expect(math.sumBy(x => x, []))
-        .toBe(0);
+      expect(math.sumBy(x => x, [])).toBe(0);
     });
   });
 
   describe('minBy', () => {
     it('should exist on math', () => {
-      expect(math.minBy)
-        .toEqual(jasmine.any(Function));
+      expect(math.minBy).toEqual(jasmine.any(Function));
     });
 
     it('should perform the operation', () => {
-      expect(math.minBy(x => x, [1, 2, 3, 4, 5]))
-        .toBe(1);
+      expect(math.minBy(x => x, [1, 2, 3, 4, 5])).toBe(1);
     });
 
     it('should return 0 for an empty list', () => {
-      expect(math.minBy(x => x, []))
-        .toBe(0);
+      expect(math.minBy(x => x, [])).toBe(0);
     });
   });
 
   describe('maxBy', () => {
     it('should exist on math', () => {
-      expect(math.maxBy)
-        .toEqual(jasmine.any(Function));
+      expect(math.maxBy).toEqual(jasmine.any(Function));
     });
 
     it('should perform the operation', () => {
-      expect(math.maxBy(x => x, [1, 2, 3, 4, 5]))
-        .toBe(5);
+      expect(math.maxBy(x => x, [1, 2, 3, 4, 5])).toBe(5);
     });
 
     it('should return 0 for an empty list', () => {
-      expect(math.maxBy(x => x, []))
-        .toBe(0);
+      expect(math.maxBy(x => x, [])).toBe(0);
     });
   });
 });
