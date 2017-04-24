@@ -26,11 +26,11 @@ type anyToNumberT = (x: any) => number;
 export const minBy = <T>(fn: anyToNumberT, xs: T[]) => {
   if (xs.length === 0) return 0;
 
-  return xs.map(fn).reduce((a, b) => lte(a, b) ? b : a);
+  return xs.map(fn).reduce((a, b) => (lte(a, b) ? b : a));
 };
 
 export const maxBy = <T>(fn: anyToNumberT, xs: T[]) =>
-  xs.map(fn).reduce((a, b) => gte(a, b) ? b : a, 0);
+  xs.map(fn).reduce((a, b) => (gte(a, b) ? b : a), 0);
 
 export const sumBy = <T>(fn: anyToNumberT, xs: T[]) =>
   xs.map(fn).reduce((a, b) => a + b, 0);
