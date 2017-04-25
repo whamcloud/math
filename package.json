@@ -1,5 +1,5 @@
 {
-  "name": "@iml/math",
+  "name": "@mfl/math",
   "version": "6.0.0",
   "description": "Functional Math",
   "main": "source/math.js",
@@ -10,7 +10,7 @@
     "cover": "NODE_ENV=test npm t -- --coverage"
   },
   "publishConfig": {
-    "registry": "https://ubit-artifactory-or.intel.com/artifactory/api/npm/iml-npm-local"
+    "access": "public"
   },
   "pre-commit": [
     "eslint",
@@ -18,9 +18,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.intel.com/IML/math.git"
+    "url": "https://github.intel.com/MFL/math.git"
   },
-  "author": "IML Team",
+  "author": "MFL Team",
   "license": "MIT",
   "devDependencies": {
     "babel-eslint": "7.1.1",
@@ -46,7 +46,7 @@
       "test"
     ],
     "transformIgnorePatterns": [
-      "/node_modules/(?!@iml)/"
+      "/node_modules/(?!@mfl)/"
     ]
   }
 }
