@@ -1,4 +1,4 @@
-# Math
+# math
 
 This module provides a stdlib of math methods.
 
