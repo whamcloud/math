@@ -39,19 +39,19 @@ export const div = (a: number, b: number) => a / b;
 
 type anyToNumberT = (x: any) => number;
 
-export const minBy = (fn: anyToNumberT, xs: number[]) => {
+export const minBy = <T> (fn: anyToNumberT, xs: T[]) => {
   if (xs.length === 0) return 0;
 
   return xs.map(fn).reduce((a, b) => lte(a, b) ? b : a);
 };
 
-export const maxBy = (fn: anyToNumberT, xs: number[]) =>
+export const maxBy = <T>(fn: anyToNumberT, xs: T[]) =>
   xs.map(fn).reduce((a, b) => gte(a, b) ? b : a, 0);
 
-export const sumBy = (fn: anyToNumberT, xs: number[]) =>
+export const sumBy = <T>(fn: anyToNumberT, xs: T[]) =>
   xs.map(fn).reduce((a, b) => a + b, 0);
 
-export const averageBy = (fn: anyToNumberT, xs: number[]) => {
+export const averageBy = <T>(fn: anyToNumberT, xs: T[]) => {
   if (xs.length === 0) return 0;
 
   return sumBy(fn, xs) / xs.length;
