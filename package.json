@@ -1,5 +1,5 @@
 {
-  "name": "@mfl/math",
+  "name": "@iml/math",
   "version": "6.0.1",
   "description": "Functional Math",
   "main": "source/math.js",
@@ -20,7 +20,7 @@
     "type": "git",
     "url": "https://github.com/intel-hpdd/math.git"
   },
-  "author": "MFL Team",
+  "author": "IML Team",
   "license": "MIT",
   "devDependencies": {
     "babel-eslint": "7.1.1",
@@ -43,7 +43,7 @@
       "test"
     ],
     "transformIgnorePatterns": [
-      "/node_modules/(?!@mfl)/"
+      "/node_modules/(?!@iml)/"
     ]
   }
 }
