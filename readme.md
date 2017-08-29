@@ -1,9 +1,8 @@
 # math
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/intel-hpdd/math.svg)](https://greenkeeper.io/)
-
 This module provides a stdlib of math methods.
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/intel-hpdd/math.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/intel-hpdd/math.svg?branch=master)](https://travis-ci.org/intel-hpdd/math)
 
 ## Methods
