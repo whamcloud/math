@@ -23,7 +23,7 @@
   "author": "IML Team",
   "license": "MIT",
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
+    "babel-eslint": "^8.0.2",
     "babel-plugin-transform-flow-strip-types": "6.22.0",
     "babel-preset-env": "^1.6.0",
     "eslint": "^4.5.0",
@@ -31,8 +31,8 @@
     "eslint-plugin-flowtype": "^2.35.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-prettier": "^2.2.0",
-    "flow-bin": "0.41.0",
-    "jest": "19.0.2",
+    "flow-bin": "0.59.0",
+    "jest": "21.2.1",
     "pre-commit": "1.2.2",
     "prettier": "^1.6.0"
   },
